@@ -1,0 +1,92 @@
+{%include 'header.html'%}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>DataTables  ({{total}})</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">DataTables</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn btn-secondary btn-sm" href="/table">All</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/Aceh">Aceh</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/Sumatera Utara">Sumatera Utara</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/Sumatera Barat">Sumatera Barat</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/Sumatera selatan">Sumatera Selatan</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/riau">Riau</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/jambi">Jambi</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/bengkulu">Bengkulu</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/lampung">Lampung</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/Kepulauan Riau">Kepulauan Riau</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/Bangka Belitung">Bangka Belitung</a>
+                            <a class="btn btn-secondary btn-sm" href="/table/total_produksi">Total Produksi</a>
+
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Provinsi</th>
+                                        <th>Tahun</th>
+                                        <th>Produksi</th>
+                                        <th>Luas Panen</th>
+                                        <th>Curah Hujan</th>
+                                        <th>Kelembapan</th>
+                                        <th>Suhu Rata-rata</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for index,rows in data.iterrows()%}
+                                    <tr>
+                                        <td>{{rows['Provinsi']}}</td>
+                                        <td>{{rows['Tahun']}}</td>
+                                        <td>{{rows['Produksi']}} Kg</td>
+                                        <td>{{rows['Luas Panen']}} (ha)</td>
+                                        <td>{{rows['Curah hujan']}}</td>
+                                        <td>{{rows['Kelembapan']}}</td>
+                                        <td>{{rows['Suhu rata-rata']}}</td>
+
+
+
+                                    </tr>
+                                    {%endfor%}
+
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
+
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{%include 'footer.html'%}

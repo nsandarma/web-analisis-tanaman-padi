@@ -1,0 +1,77 @@
+{%include 'header.html'%}
+<div class="content-wrapper">
+    <div class="bg-dark text-center">
+        <h1>Analisa Data Tanaman Padi Prov.{{prov}}</h1>
+
+    </div>
+    <section class="content">
+        
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Tanaman Padi</h3>
+
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Provinsi</th>
+                                        <th>Tahun</th>
+                                        <th>Produksi</th>
+                                        <th>Luas Panen</th>
+                                        <th>Curah Hujan</th>
+                                        <th>Kelembapan</th>
+                                        <th>Suhu Rata-rata</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for index,rows in data.iterrows()%}
+                                    <tr>
+                                        <td>{{rows['Provinsi']}}</td>
+                                        <td>{{rows['Tahun']}}</td>
+                                        <td>{{rows['Produksi']}} Kg</td>
+                                        <td>{{rows['Luas Panen']}} (ha)</td>
+                                        <td>{{rows['Curah hujan']}}</td>
+                                        <td>{{rows['Kelembapan']}}</td>
+                                        <td>{{rows['Suhu rata-rata']}}</td>
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="bg-dark text-center">
+                <h1>Grafik</h1>
+
+            </div>
+            {%include pages[3]%}
+            <div>
+                <p class="lead text-center bg-secondary">Mean : {{info['mean_luas_panen']}} | Max : {{info['mean_luas_panen']}} | Min : {{info['mean_luas_panen']}}</p>
+            </div>
+            {%include pages[0]%}
+            <div>
+                <p class="lead text-center bg-secondary">Mean : {{info['mean_curah_hujan']}} | Max : {{info['maks_curah_hujan']}} | Min : {{info['min_curah_hujan']}}</p>
+            </div>
+            {%include pages[1]%}
+            <div>
+                <p class="lead text-center bg-secondary">Mean : {{info['mean_kelembapan']}} | Max : {{info['maks_kelembapan']}} | Min : {{info['min_kelembapan']}}</p>
+            </div>
+            {%include pages[2]%}
+            <div>
+                <p class="lead text-center bg-secondary">Mean : {{info['mean_suhu']}} | Max : {{info['maks_suhu']}} | Min : {{info['min_suhu']}}</p>
+            </div>
+
+
+        
+    </section>
+
+</div>
+{%include "footer.html"%}

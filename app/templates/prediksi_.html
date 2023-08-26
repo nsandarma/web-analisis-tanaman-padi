@@ -1,0 +1,69 @@
+{%include "header.html"%}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="text-center">
+                <h1>Prediksi Produksi Tanaman Padi 4 Tahun Kedepan</h1>
+            </div>
+
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- jquery validation -->
+                    <div class="card card-primary">
+
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form id="quickForm" method="post">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Provinsi</label>
+                                    <select class="form-control select2" style="width: 100%;" name="provinsi">
+                                        {%for i in prov%}
+                                            <option>{{i}}</option>
+                                        {%endfor%}
+
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-dark">Prediksi</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <div class="col-md-6">
+
+                </div>
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+            {%if hasil%}
+            <div class="jumbotron jumbotron-fluid bg-dark">
+                <div class="container">
+                    <h1 class="display-5 text-center">Hasil Prediksi : {{hasil}}</h1>
+
+                </div>
+            </div>
+            {%endif%}
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{%include "footer.html"%}

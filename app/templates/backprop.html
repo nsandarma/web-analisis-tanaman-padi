@@ -1,0 +1,112 @@
+{%include 'header.html'%}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+
+    <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container">
+            <h1 class="display-5 text-center">Tahap-tahap Backpropagation</h1>
+            <ul class="list-group text-dark">
+                <li class="list-group-item" aria-current="true">1. Seleksi Fitur</li>
+                <li class="list-group-item " aria-current="true">2. Normalisasi Data</li>
+                <li class="list-group-item">3. Inisiasi input,weight dan hidden layer</li>
+                <li class="list-group-item">4. Forward propagation</li>
+                <li class="list-group-item">5. Backpropagation</li>
+                <li class="list-group-item">6. Hasil</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">1. Seleksi Fitur</h1>
+            <br>
+            <p class="text-justify lead">
+                Seleksi fitur adalah salah satu tahapan proses Prediksi. Seleksi fitur dilakukan dengan cara memilih
+                fitur-fitur yang relevan yang mempengaruhi hasil Prediksi. Seleksi fitur digunakan untuk mengurangi
+                dimensi data dan fitur-fitur yang tidak relevan. Tujuan utama dari seleksi fitur adalah memilih fitur
+                yang penting dan menghapus fitur yang tidak penting dan kurang penting terhadap kelas label guna
+                meningkatkan kinerja prediksi yaitu meningkatkan akurasi dan mengurangi waktu komputasi.
+            </p>
+            <!-- <img src="{{url_for('static',filename='images/corr.png')}}" class="img-fluid" width="70%" height="50%" alt=""> -->
+            <p class="">Fitur dapat di definisikan sebagai X</p>
+            <img src="{{url_for('static',filename='images/table_fitur.png')}}" alt="">
+            <br><br>
+            <p class="">Adapun Label dapat didefenisikan sebagai y</p>
+            <img src="{{url_for('static',filename='images/table_label.png')}}" alt="">
+
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">2. Normalisasi Data</h1>
+            <br>
+            <p class="text-justify lead">
+                Tujuan normalisasi adalah mengubah nilai kolom numerik dalam himpunan data untuk menggunakan skala umum,
+                tanpa mendistorsi perbedaan dalam rentang nilai atau kehilangan informasi. Normalisasi juga diperlukan
+                untuk beberapa algoritma untuk membuat model data dengan benar.
+            </p>
+            <p>Normalisasi X</p>
+            <img src="{{url_for('static',filename='images/x_norm.png')}}" alt="">
+            <br><br>
+            <p>Normalisasi y</p>
+            <img src="{{url_for('static',filename='images/y_norm.png')}}" alt="">
+
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">3. Inisiasi Input, Weight dan Hidden Layer</h1>
+            <br>
+            <p class="text-justify lead">
+                Inisiasi nilai weight menggunakan random (angka acak) namun nanti nilai weight akan terus di update ketia proses Backpropagation berjalan
+            </p>
+            <p>Input : 3, hidden : 3, output : 1</p>
+
+            <img src="{{url_for('static',filename='images/inisiasi.png')}}" alt="">
+            
+
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">4. Forward Propagation</h1>
+            <br>
+            <p class="text-justify lead">
+                Inisiasi nilai weight menggunakan random (angka acak) namun nanti nilai weight akan terus di update ketia proses Backpropagation berjalan
+            </p>
+            <p>Input : 3   hidden : 3   output : 1</p>
+            <img src="{{url_for('static',filename='images/forward.png')}}" alt="">
+            
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">5. Backpropagation</h1>
+            <br>
+            <p class="text-justify lead">
+                setelah melakukan forward, nilai error akan disimpan untuk melakukan update nilai weight secara mundur atau backward dan dikoreksi agar dapat memperkecil nilai error dengan menggunakan fungsi derivatif
+            </p>
+            <p>Adjustment : error  X derivatif(X)</p>
+            <img src="{{url_for('static',filename='images/bacward.png')}}" alt="">
+            
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">6. Hasil Akurasi</h1>
+            <br>
+            <p class="text-justify lead">
+                Dengan melakukan iterasi sebanyak 1000, maka hasil error yang didapatkan dapat di lihat pada gambar berikut: 
+            </p>
+            <p>MSE : 0.053</p>
+            <img src="{{url_for('static',filename='images/mse.png')}}" alt="">
+            
+        </div>
+    </div>
+
+
+
+</div>
+<!-- /.content-wrapper -->
+{%include 'footer.html'%}
