@@ -4,7 +4,7 @@ import numpy as np
 from babel.numbers import format_decimal
 
 
-df = pd.read_csv('data_lengkap.csv')
+df = pd.read_csv('data-tanaman-padi-lengkap.csv')
 df_de = df.copy()
 
 def convert(number):

@@ -5,5 +5,7 @@ UPLOAD_FOLDER = 'upload/files'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 from .routes import *
+from .model import *
 from .backprop import *
+
 
